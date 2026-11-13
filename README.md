@@ -1,6 +1,6 @@
 # 基于残差通道注意力的单图像超分辨率重建
 
-本仓库是“图像大作业”的完整复现材料，包含：
+包含：
 
 - SRCNN（Dong et al., TPAMI 2016）baseline 的 PyTorch 复现；
 - 本文提出的 RCSA-SR（Residual Channel Attention SR）模型；
@@ -53,7 +53,7 @@ set PYTHONPATH=.pydeps
 D:\python\python.exe code/data_prep.py
 ```
 
-### 用你自己的图片训练
+### 图片训练流程
 
 1. 新建 `data/my_images`，把 jpg/png/bmp 图片直接放进去（不要放子文件夹）。建议 20–200 张，长边至少 128 px；少于 48 px 的图会被跳过。
 2. 生成自定义 patch（不要覆盖原来的 `data/patches`）：
@@ -164,12 +164,8 @@ D:\python\python.exe code/make_figures.py
 D:\python\python.exe code/make_paper.py
 ```
 
-论文生成在 `paper/`，包含中文/英文题目、作者、单位、摘要、关键词、引言、相关工作、方法、实验、结论、参考文献、图表，以及代码与权重说明。
 
 ## 权重
 
 `weights/` 中每个 `.pth` 同时保存 `model`、`state_dict`、`scale`、`tag`、`params`、训练参数与耗时，可直接用 `evaluate.py` 的 `load_model` 加载。
 
-## 说明
-
-论文中的全部 PSNR/SSIM、训练时间、参数量均来自本仓库的真实日志与 CSV；作者/单位字段为占位符 `XXX`，提交前请替换为真实信息。
